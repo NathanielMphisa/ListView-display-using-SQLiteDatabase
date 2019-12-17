@@ -9,11 +9,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,6 +53,32 @@ public class MainActivity extends AppCompatActivity {
         simpleCursorAdapter = new SimpleCursorAdapter(this,R.layout.view_record,cursor,from,to,0);
         simpleCursorAdapter.notifyDataSetChanged();
         listView.setAdapter(simpleCursorAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //R.id.id,R.id.name,R.id.currency,R.id.cost
+
+                TextView idItem = view.findViewById(R.id.id);
+                TextView itemName = view.findViewById(R.id.name);
+                TextView itemCurrency = view.findViewById(R.id.currency);
+                TextView itemCost = view.findViewById(R.id.cost);
+
+                String identity = idItem.getText().toString();
+                String productName = itemName.getText().toString();
+                String productCurrency = itemCurrency.getText().toString();
+                String productCost = itemCost.getText().toString();
+
+                Intent intent = new Intent(getApplicationContext(), Modify_record.class);
+                intent.putExtra("identity",identity);
+                intent.putExtra("productName",productName);
+                intent.putExtra("productCost",productCost);
+                intent.putExtra("productCurrency",productCurrency);
+
+                startActivity(intent);
+
+            }
+        });
 
     }
 

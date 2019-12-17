@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CaptureData</string>
+    <string name="app_usd">USD</string>
+    <string name="app_rtgs">RTGS</string>
 </resources>
