@@ -32,6 +32,7 @@ public class DBManager {
     }
 
     public boolean insert(String itemName,int cost,String currency){
+        dbhelper = new DatabaseHelper(context);
         database = dbhelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.ITEM_NAME,itemName);

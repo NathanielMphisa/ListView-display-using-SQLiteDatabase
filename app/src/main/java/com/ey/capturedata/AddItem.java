@@ -56,7 +56,7 @@ public class AddItem extends AppCompatActivity implements View.OnClickListener {
 
         Log.i("Values",itemName + ", " + cost + ", " + currency);
 
-
+        DBManager dbManager = new DBManager(this);
         boolean result = dbManager.insert(itemName,cost,currency);
 
 
@@ -66,6 +66,5 @@ public class AddItem extends AppCompatActivity implements View.OnClickListener {
         startActivity(intent);
 
     }
-
 
 }

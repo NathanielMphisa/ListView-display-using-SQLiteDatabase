@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         dbManager = new DBManager(this);
         dbManager.open();
+
 
         Cursor cursor = dbManager.fetch();
         listView = findViewById(R.id.list_view);
