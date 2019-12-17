@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Setting variables
 
-    public String[] from = new String[] {DatabaseHelper.ITEM_NAME,DatabaseHelper.ITEM_COST,DatabaseHelper.ITEM_CURRENCY,DatabaseHelper.ID};
+    public String[] from = new String[] {DatabaseHelper.ID, DatabaseHelper.ITEM_NAME, DatabaseHelper.ITEM_CURRENCY,DatabaseHelper.ITEM_COST};
     public int[] to = new int[] {R.id.id,R.id.name,R.id.currency,R.id.cost};
 
 
